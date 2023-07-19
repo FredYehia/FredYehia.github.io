@@ -272,23 +272,19 @@
       width: 100%;
       border-bottom-left-radius: 20px;
       border-bottom-right-radius: 20px;
+      
     }
 
     #overlay_box {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-      background-color: #fefefe;
-      border-radius: 20px;
       padding: 0px;
       z-index: 3;
       text-align: center;
       padding-bottom: 0px;
-      margin-bottom: 0px;
-      aspect-ratio: 81 / 4 * 3 / 90;
-      width: 90%;
+      object-fit: contain;
+      max-width: 90%;
+      max-height: 85%;
+      margin: auto;
+      margin-top: 5%;
       /*height: min(90vh, 90vw * 3 / 4);
       width: 81vh / 4 * 3;
       max-width: 90%;
@@ -306,10 +302,13 @@
     }
 
     #overlay_text_container {
+      background-color: #fefefe;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 10%;
+      height: 10vw;
     }
 
     #serving {
@@ -448,9 +447,21 @@
       }
 
       #overlay_box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
         aspect-ratio: 81 / 4 * 3 / 90;
         height: 90%;
         width: (90 / 81 / 4 * 3 / 90);
+        max-width: auto;
+        max-height: auto;
+        margin: auto;
+      }
+
+      #overlay_text_container {
+        height: 10%;
       }
 
       #serving {

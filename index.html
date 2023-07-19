@@ -147,17 +147,19 @@
 
     .menu_link_section {
       display: flex;
+      flex-direction: column;
     }
 
     .menu_link {
       text-decoration: none;
-      font-size: 30px;
+      font-size: 6.5vw;
       background-color: #b7aeff;
       color: #333333;
       padding: 20px 50px 20px 50px;
-      margin: 0px 50% 0px 10%;
       border-radius: 20px;
       display: block;
+      text-align: center;
+      margin: 0px 10% 0px 10%;
     }
 
     .mode_icon {
@@ -231,6 +233,15 @@
       .divider {
         width: 70vw;
       }
+
+      .menu_link {
+        font-size: 4vw;
+        margin: 0px 20% 0px 20%;
+      }
+
+      .menu_link {
+        font-size: 5vw;
+      }
     }
 
     @media (min-width: 801px) {
@@ -291,6 +302,11 @@
         font-size: 3vw;
         padding-left: 1vw;
         padding-right: 1vw;
+      }
+
+      .menu_link {
+        font-size: 4vw;
+        margin: 0px 25% 0px 25%;
       }
 
       .phone_number {
@@ -391,6 +407,15 @@
         padding-right: 2vw;
       }
 
+      .menu_link_section {
+        flex-direction: row;
+      }
+
+      .menu_link {
+        font-size: 30px;
+        margin: 0px 30% 0px 10%;
+      }
+
       .phone_number {
         font-size: 40px !important;
         margin-top: 20px;
@@ -479,7 +504,7 @@
   <br>
   <div class="menu_link_section">
     <div class="column">
-      <img id="intro_image" src="https://theperfectroundgolf.com/wp-content/uploads/2022/04/placeholder.png">
+      <!--<img id="intro_image" src="">!-->
     </div>
     <div class="column">
       <a class="menu_link" href="GreekDelights.html">Greek Menu</a><br>
