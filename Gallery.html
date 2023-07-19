@@ -12,6 +12,33 @@
   <meta property="og:title" content="Fred &amp; Joumana's Mediterranean Catering" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Diphylleia">
   <title>Fred &amp; Joumana's Mediterranean Catering</title>
+  <script>
+    document.addEventListener('click', function (event)
+    {
+      const overlay = document.getElementById("overlay");
+
+      if (event.target == overlay)
+      {
+        overlay.style.display = "none";
+      }
+
+      /*if (overlay.style.display == 'block')
+      {
+        const overlay_box = document.getElementById("overlay_box");
+        if (!overlay_box.contains(event.target))
+        {
+          overlay.style.display = "none";
+        }
+      }*/
+    });
+    function showOverlay(element)
+    {
+      document.getElementById("overlay_image").src = element.children[0].src;
+      document.getElementById("overlay_text").innerHTML = element.children[1].innerHTML;
+
+      document.getElementById("overlay").style.display = "block";
+    }
+  </script>
   <style type="text/css" title="style">
     body {
       background-color: rgb(255, 255, 255);
@@ -61,6 +88,7 @@
       font-size: 4vw;
       font-weight: normal;
       margin: 0px;
+      margin-top: 10px;
       text-align: center;
     }
 
@@ -124,6 +152,23 @@
       margin-bottom: -15px;
     }
 
+    .gallery_box {
+      text-align: justify;
+      width: 90%;
+      cursor: pointer;
+    }
+
+    .gallery_image {
+      width: 100%;
+      margin: 0px;
+    }
+
+    .gallery_text {
+      font-size: 10vw;
+      margin: 0px;
+      margin-bottom: 20px;
+    }
+
     .list_box {
       text-align: center;
     }
@@ -172,6 +217,12 @@
       font-weight: bold;
     }
 
+    .row {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-around;
+    }
+
     .row1 {
       background-color: #f0f6ff;
     }
@@ -189,8 +240,9 @@
     }
 
     #intro_image {
-      margin: 0px 25% 0px 25%;
-      width: 50%;
+      margin: 0px 50px 0px 50px;
+      width: 10%;
+      float: left;
     }
 
     #intro_text {
@@ -199,6 +251,65 @@
 
     #introduction {
       margin-bottom: 40px !important;
+    }
+
+    #overlay {
+      position: fixed;
+      display: none;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 2;
+    }
+
+    #overlay_image {
+      height: 90%;
+      margin: 0px;
+      width: 100%;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+
+    #overlay_box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      background-color: #fefefe;
+      border-radius: 20px;
+      padding: 0px;
+      z-index: 3;
+      text-align: center;
+      padding-bottom: 0px;
+      margin-bottom: 0px;
+      aspect-ratio: 81 / 4 * 3 / 90;
+      width: 90%;
+      /*height: min(90vh, 90vw * 3 / 4);
+      width: 81vh / 4 * 3;
+      max-width: 90%;
+      max-height: 90%;*/
+      /*width: min(90vw, 90vh);
+      height: min(90vw, 90vh);*/
+    }
+
+    #overlay_text {
+      margin: 0px;
+      font-size: 36px;
+      padding: 0%;
+      flex: 100%;
+      max-height: 100%;
+    }
+
+    #overlay_text_container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 10%;
     }
 
     #serving {
@@ -229,7 +340,18 @@
       }
 
       .divider {
-        width: 70vw;
+        width: 38vw;
+      }
+
+      .gallery_box {
+        text-align: justify;
+        width: 45%;
+      }
+
+      .gallery_text {
+        font-size: 7vw;
+        margin: 0px;
+        margin-bottom: 20px;
       }
     }
 
@@ -278,7 +400,7 @@
       }
 
       .divider {
-        width: 60vw;
+        width: 32vw;
       }
 
       .meal_name {
@@ -323,6 +445,12 @@
 
       #introduction {
         display: flex;
+      }
+
+      #overlay_box {
+        aspect-ratio: 81 / 4 * 3 / 90;
+        height: 90%;
+        width: (90 / 81 / 4 * 3 / 90);
       }
 
       #serving {
@@ -372,7 +500,18 @@
       }
 
       .divider {
-        width: 420px;
+        width: 230px;
+      }
+
+      .gallery_box {
+        text-align: justify;
+        width: 30%;
+      }
+
+      .gallery_text {
+        font-size: 40px;
+        margin: 0px;
+        margin-bottom: 20px;
       }
 
       .list_box {
@@ -428,6 +567,17 @@
         width: 85%;
       }
 
+      .gallery_box {
+        text-align: justify;
+        width: 23%;
+      }
+
+      .gallery_text {
+        font-size: 50px;
+        margin: 0px;
+        margin-bottom: 20px;
+      }
+
       .meal_name {
         font-size: 40px;
         padding-left: 2vw;
@@ -451,6 +601,12 @@
         margin-bottom: 0px;
       }
 
+      #overlay_box {
+        aspect-ratio: 81 / 4 * 3 / 90;
+        height: 90%;
+        width: auto;
+      }
+
       #spanakopita {
         font-size: 40px;
       }
@@ -460,6 +616,17 @@
       #intro_text {
         font-size: 34px;
         width: 700px;
+      }
+
+      .gallery_box {
+        text-align: justify;
+        width: 16%;
+      }
+
+      .gallery_text {
+        font-size: 40px;
+        margin: 0px;
+        margin-bottom: 20px;
       }
     }
   </style>
@@ -474,54 +641,69 @@
   <br>
   <br>
   <br>
+  <h3>Gallery</h3>
+  <hr class="divider">
   <br>
   <br>
   <br>
-  <div class="menu_link_section">
-    <div class="column">
-      <img id="intro_image" src="https://theperfectroundgolf.com/wp-content/uploads/2022/04/placeholder.png">
+  <div class="row">
+    <div class="gallery_box" onclick="showOverlay(this)">
+      <img class="gallery_image" src="images/beef_souvlaki.jpg">
+      <p class="gallery_text">Beef Souvlaki</p>
     </div>
-    <div class="column">
-      <a class="menu_link" href="GreekDelights.html">Greek Menu</a><br>
-      <a class="menu_link" href="LebaneseFeast.html">Lebanese Menu</a><br>
-      <a class="menu_link" href="Gallery.html">Gallery</a>
+    <div class="gallery_box" onclick="showOverlay(this)">
+      <img class="gallery_image" src="images/caesar_salad.jpg">
+      <p class="gallery_text">Caesar Salad</p>
+    </div>
+    <div class="gallery_box" onclick="showOverlay(this)">
+      <img class="gallery_image" src="images/chicken_souvlaki.jpg">
+      <p class="gallery_text">Chicken Souvlaki</p>
+    </div>
+    <div class="gallery_box" onclick="showOverlay(this)">
+      <img class="gallery_image" src="images/falafel_balls.jpg">
+      <p class="gallery_text">Falafel Balls</p>
+    </div>
+    <div class="gallery_box" onclick="showOverlay(this)">
+      <img class="gallery_image" src="images/greek_salad.jpg">
+      <p class="gallery_text">Greek Salad</p>
+    </div>
+    <div class="gallery_box" onclick="showOverlay(this)">
+      <img class="gallery_image" src="images/kibbeh_tray.jpg">
+      <p class="gallery_text">Kibbeh Tray</p>
+    </div>
+    <div class="gallery_box" onclick="showOverlay(this)">
+      <img class="gallery_image" src="images/lentils_and_rice.jpg">
+      <p class="gallery_text">Lentils &amp; Rice</p>
+    </div>
+    <div class="gallery_box" onclick="showOverlay(this)">
+      <img class="gallery_image" src="images/moussaka.jpg">
+      <p class="gallery_text">Moussaka</p>
+    </div>
+    <div class="gallery_box" onclick="showOverlay(this)">
+      <img class="gallery_image" src="images/rice.jpg">
+      <p class="gallery_text">Rice</p>
+    </div>
+    <div class="gallery_box" onclick="showOverlay(this)">
+      <img class="gallery_image" src="images/roasted_potatoes.jpg">
+      <p class="gallery_text">Roasted Potatoes</p>
+    </div>
+    <div class="gallery_box" onclick="showOverlay(this)">
+      <img class="gallery_image" src="images/spanakopita.jpg">
+      <p class="gallery_text">Spankopita</p>
+    </div>
+    <div class="gallery_box" onclick="showOverlay(this)">
+      <img class="gallery_image" src="images/stuffed_grape_vine_leaves.jpg">
+      <p class="gallery_text">Stuffed Grape Vine Leaves</p>
     </div>
   </div>
-  <br>
-  <br>
-  <br>
-  <br>
-  <div id="introduction">
-    <div class="column">
-      <p id="intro_text">At our core, we believe that fresh ingredients have a powerful impact on the taste & quality of
-        our dishes, nourishing both the body & soul. With 45 years of food industry experience, our commitment to
-        providing exceptional, healthy culinary options sets us apart. We strive to create memorable events filled with
-        delicious, nutritious meals that will leave a lasting impression on your guests.</p>
-    </div>
-    <div class="column">
-      <p id="serving">Serving:</p>
-      <div class="list_box">
-        <ul>
-          <li>Brampton</li>
-          <li>Georgetown</li>
-          <li>Milton</li>
-          <li>Mississauga</li>
-          <li>Caledon</li>
-          <li>Oakville</li>
-          <li>Etobicoke</li>
-        </ul>
+  <div id="overlay">
+    <div id="overlay_box">
+      <div id="overlay_text_container">
+        <p id="overlay_text">test</p>
       </div>
-      <p class="phone_number">Call to order:<br>(416) 618-5626</p>
+      <img id="overlay_image">
     </div>
   </div>
-  <hr>
-  <br>
-  <p> 72 hour notice required<br>
-    Delivery charge dependent on location<br>
-    Half sizes available upon request<br>
-    Halal available</p>
-  <p class="phone_number">Call to order: (416) 618-5626</p>
-  <p style="display: none;">Mediterranean food</p>
 </body>
 
 </html>
